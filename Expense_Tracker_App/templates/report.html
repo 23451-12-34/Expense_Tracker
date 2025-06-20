@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spending Reports</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f0f2f5;
+            padding: 30px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .chart-container {
+            width: 90%;
+            margin: auto;
+            margin-bottom: 50px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Spending Reports</h2>
+
+    <div class="chart-container">
+        <h3>📅 Monthly Expenses ({{ current_year}})</h3>
+        <canvas id="monthlyChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>📆 Annual Expenses</h3>
+        <canvas id="annualChart"></canvas>
+    </div>
+
+    <a href="/" class="back-link">← Back to Home</a>
+
+    <script>
+        const months = {{ months | tojson }};
+        const monthlyTotals = {{ monthly_totals | tojson }};
+        const years = {{ years | tojson }};
+        const annualTotals = {{ annual_totals | tojson }};
+
+        const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
+        new Chart(monthlyCtx, {
+            type: 'bar',
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'Monthly Spending (₹)',
+                    data: monthlyTotals,
+                    backgroundColor: '#007bff'
+                }]
+            }
+        });
+
+        const annualCtx = document.getElementById('annualChart').getContext('2d');
+        new Chart(annualCtx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Annual Spending (₹)',
+                    data: annualTotals,
+                    fill: false,
+                    borderColor: '#28a745',
+                    tension: 0.1
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

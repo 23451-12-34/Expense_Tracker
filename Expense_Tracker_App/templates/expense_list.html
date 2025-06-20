@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 0 10px #ccc;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+        .filter-form input, .filter-form select, .filter-form button {
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button.delete-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button.delete-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>💸 Expense List</h2>
+
+    <form action="/expenses" method="POST" class="filter-form">
+        <label>Start Date:</label>
+        <input type="date" name="start_date">
+        
+        <label>End Date:</label>
+        <input type="date" name="end_date">
+
+        <label>Category:</label>
+        <select name="category">
+            <option value="All">All</option>
+            {% for cat in categories %}
+                <option value="{{ cat }}" {% if selected_cat == cat %}selected{% endif %}>{{ cat }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Filter</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Amount (₹)</th>
+                <th>Description</th>
+                <th>Action</th> <!-- ✅ New column for delete -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in expenses %}
+            <tr>
+                <td>{{ row['Date'] }}</td>
+                <td>{{ row['Category'] }}</td>
+                <td>{{ row['Amount'] }}</td>
+                <td>{{ row['Description'] }}</td>
+                <td>
+                    <form action="/delete/{{ loop.index0 }}" method="POST" style="display:inline;">
+                        <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this expense?');">🗑 Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="back-link" href="/">← Back to Home</a>
+
+</body>
+</html>
