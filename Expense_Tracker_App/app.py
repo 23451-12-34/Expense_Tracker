@@ -42,8 +42,8 @@ def create_expense():
 
 
 
-@app.route('/expenses',methods=['GET','post']) #usaually 'GET method is comes bydefault but here i dont know why write //////////#############
-def view_expenses():      #what I explain below                                                                                                                 
+@app.route('/expenses',methods=['GET','post']) 
+def view_expenses():                                                                                                                     
                                     
     df=pd.read_excel('Expense_tracker.xlsx')
 
@@ -51,7 +51,7 @@ def view_expenses():      #what I explain below
     df['Date']=pd.to_datetime(df['Date'],errors='coerce')
     df['Amount']=pd.to_numeric(df['Amount'],errors='coerce').fillna(0)
     df['Category']=df['Category'].astype(str)
-#flow of this or use of this is below   ==>DOWN
+
     start_date=request.form.get('start_date')
     end_date=request.form.get('end_date')
     category=request.form.get('category')
@@ -110,138 +110,5 @@ def report_page():
 # 4	Sends to report.html	               render_template()
 # 5	Chart.js plots graphs in browser	   JavaScript
 
-                          
-   
-    
+                              
 app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #use of this
-    #  start_date=request.form.get('start_date')
-    #     end_date=request.form.get('end_date')
-    #     category=request.form.get('category')
-    #     return render_template('add_expense.html')
-    # 1️⃣ User visits the page
-    # Flask serves expense_list.html (or any HTML with a form)
-
-    # HTML form is displayed in the browser
-    # 2️⃣ User fills the form
-    # User selects:
-
-    # ✅ Start Date
-
-    # ✅ End Date
-
-    # ✅ Category
-
-    # 3️⃣ User clicks Submit
-    # Browser sends a POST request to Flask
-
-    # This request contains the form data like:
-
-    # ini
-    # Copy
-    # Edit
-    # start_date=2025-06-01
-    # end_date=2025-06-15
-    # category=Food
-    # 4️⃣ Flask receives the request
-    # In app.py, this code runs:
-
-    # python
-    # Copy
-    # Edit
-    # start_date = request.form.get('start_date')
-    # end_date = request.form.get('end_date')
-    # category = request.form.get('category')
-    # 🧠 Flask pulls the data from the incoming request, not directly from HTML.
-
-    # 5️⃣ Flask uses that data
-    # It applies filters on the expense DataFrame (df)
-
-    # Then renders the filtered results on the same page
-
-    # 🧭 Full Flow Summary
-    # css
-    # Copy
-    # Edit
-    # HTML form  →  Browser submits via POST  →  Flask gets request.form.get(...)  →  Uses values to filter data  →  Show resul
-
-
-#///////////////////#THIS IS FOR VIEW EXPENSE FUNCTION FUNCTION AND EXPENSE.HTML RELATION #//////////////////////////////////////////
-
-#     🔁 1. User submits a filter form
-# The form is on the HTML page (expense_list.html)
-
-# It contains:
-
-# Start Date
-
-# End Date
-
-# Category
-
-# 👉 When user clicks "Filter", the form submits a POST request to /expenses.
-
-# ⚙️ 2. Flask handles /expenses route
-# Reads Expense_tracker.xlsx
-
-# Cleans and converts columns (Date, Amount, Category)
-
-# Retrieves filter values:
-
-# python
-# Copy
-# Edit
-# start_date = request.form.get('start_date')
-# end_date = request.form.get('end_date')
-# category = request.form.get('category')
-# Applies filters to the DataFrame:
-
-# Filters date range and category if provided
-
-# 📦 3. Data is passed to HTML
-# After filtering, data is converted into a list of dictionaries:
-
-# python
-# Copy
-# Edit
-# df.to_dict('records')
-# Also sends:
-
-# Available categories
-
-# Selected category (to keep dropdown selected)
-
-# 📄 4. HTML template (expense_list.html) displays it
-# Shows filtered expense rows in a table
-
-# Dropdown keeps selected option using:
-
-# html
-# Copy
-# Edit
-# {% if selected_cat == cat %}selected{% endif %}
-
-
-
-
-
-
-
-
