@@ -11,12 +11,12 @@
 
 <p align="center">
   <video width="700" controls>
-    <source src="https://user-images.githubusercontent.com/your-username/demo-video.mp4" type="video/mp4">
+    <source src="file:///C:/Users/prath/Videos/Screen%20Recordings/Screen%20Recording%202025-06-29%20152956.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </p>
 
-<sup>📹 *(15–20 second walkthrough of features)*</sup>
+<sup>📹 *(1 minute walkthrough of features)*</sup>
 
 ---
 
