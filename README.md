@@ -11,7 +11,7 @@
 
 <p align="center">
   <video width="700" controls>
-    <source src="file:///C:/Users/prath/Videos/Screen%20Recordings/Screen%20Recording%202025-06-29%20152956.mp4" type="video/mp4">
+    <source src="[file:///C:/Users/prath/Videos/Screen%20Recordings/Screen%20Recording%202025-06-29%20152956.mp4](https://github.com/23451-12-34/Expense_Tracker/blob/main/Expense_Tracker_App/Screen%20Recording%202025-06-29%20155435.mp4)" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </p>
