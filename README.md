@@ -15,6 +15,11 @@
     Your browser does not support the video tag.
   </video>
 </p>
+<p align="center">
+  <a href="https://user-images.githubusercontent.com/YOUR_USERNAME/YOUR_VIDEO.mp4" target="_blank">
+    <img src="https://img.shields.io/badge/▶ Watch%20Full%20Demo-Click%20Here-red?style=for-the-badge" />
+  </a>
+</p>
 
 <sup>📹 *(1 minute walkthrough of features)*</sup>
 
