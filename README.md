@@ -10,18 +10,14 @@
 ## 🎬 Demo Video
 
 
-[![Watch Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://github.com/username/repo-name/assets/username/file_id)
+[![Watch Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)]([https://github.com/username/repo-name/assets/username/file_id](https://github.com/23451-12-34/Expense_Tracker/blob/main/Expense_Tracker_App/Screen%20Recording%202025-06-29%20155435.mp4))
 
 <p align="center">
   <a href="https://github.com/username/repo-name/assets/username/file_id" target="_blank">
     <img src="https://img.shields.io/badge/▶ Watch%20Demo%20Video-Click%20Here-red?style=for-the-badge" />
   </a>
 </p>
-<p align="center">
-  <a href="https://user-images.githubusercontent.com/YOUR_USERNAME/YOUR_VIDEO.mp4" target="_blank">
-    <img src="https://img.shields.io/badge/▶ Watch%20Full%20Demo-Click%20Here-red?style=for-the-badge" />
-  </a>
-</p>
+
 
 <sup>📹 *(1 minute walkthrough of features)*</sup>
 
