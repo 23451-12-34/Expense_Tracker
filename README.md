@@ -40,3 +40,16 @@
 ---
 
 ## 📁 Folder Structure
+project-root/
+├── Expense_Tracker/
+│   ├── app.py
+│   ├── Expense_tracker.xlsx
+│   ├── templates/
+│      ├── add_expense.html
+│      ├── expense_list.html
+│      ├── home.html
+│      └── report.html
+│  
+│
+├── media/
+│   └── video.mp4    # ✅ Your demo video stored here
