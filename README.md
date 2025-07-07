@@ -19,6 +19,10 @@
 
 ---
 ## 🖼️ Screenshots
+<img src="https://github.com/23451-12-34/Expense_Tracker/blob/main/media/photo-collage.png.png" width=800/>
+<img src="https://github.com/23451-12-34/Expense_Tracker/blob/main/media/photo-collage.png%20(1).png" width=800/>
+
+
 
 
 ## 🚀 Features
